@@ -276,7 +276,9 @@ public final class CDbwEvaluator {
       }
     }
     log.debug("interClusterDensity={}", sum);
-    interClusterDensity = sum / count;
+    if(count != 0) {
+    	interClusterDensity = sum / count;
+    }
     return interClusterDensity;
   }
   

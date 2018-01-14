@@ -185,6 +185,7 @@ public final class SplitInputJob {
       try {
         multipleOutputs.close();
       } catch (InterruptedException e) {
+    	Thread.currentThread().interrupt();
         throw new IOException(e);
       }
     }

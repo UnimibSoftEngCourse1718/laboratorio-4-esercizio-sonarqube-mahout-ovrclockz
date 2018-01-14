@@ -61,11 +61,7 @@ public class DisplayKMeans extends DisplayClustering {
     double convergenceDelta = 0.001;
     int numClusters = 3;
     int maxIterations = 10;
-    if (runClusterer) {
-      runSequentialKMeansClusterer(conf, samples, output, measure, numClusters, maxIterations, convergenceDelta);
-    } else {
-      runSequentialKMeansClassifier(conf, samples, output, measure, numClusters, maxIterations, convergenceDelta);
-    }
+   	runSequentialKMeansClassifier(conf, samples, output, measure, numClusters, maxIterations, convergenceDelta);
     new DisplayKMeans();
   }
   

@@ -111,7 +111,7 @@ public final class Probability {
       return 0.0;
     }
 
-    return Gamma.incompleteBeta(n, k + 1, p);
+    return Gamma.incompleteBeta(n, k + 1D, p);
   }
 
   /**

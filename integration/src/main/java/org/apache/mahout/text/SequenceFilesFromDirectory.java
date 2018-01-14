@@ -52,7 +52,7 @@ public class SequenceFilesFromDirectory extends AbstractJob {
   private static final String PREFIX_ADDITION_FILTER = PrefixAdditionFilter.class.getName();
 
   private static final String[] CHUNK_SIZE_OPTION = {"chunkSize", "chunk"};
-  public static final String[] FILE_FILTER_CLASS_OPTION = {"fileFilterClass", "filter"};
+  protected static final String[] FILE_FILTER_CLASS_OPTION = {"fileFilterClass", "filter"};
   private static final String[] CHARSET_OPTION = {"charset", "c"};
 
   private static final int MAX_JOB_SPLIT_LOCATIONS = 1000000;

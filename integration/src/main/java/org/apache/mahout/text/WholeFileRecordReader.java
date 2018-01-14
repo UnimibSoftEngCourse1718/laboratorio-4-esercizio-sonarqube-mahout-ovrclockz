@@ -78,8 +78,9 @@ public class WholeFileRecordReader extends RecordReader<IntWritable, BytesWritab
   @Override
   public void initialize(InputSplit inputSplit, TaskAttemptContext taskAttemptContext)
       throws IOException, InterruptedException {
-    if (!StringUtils.isBlank(fileFilterClassName) &&
-        !PrefixAdditionFilter.class.getName().equals(fileFilterClassName)) {
+    //if (!StringUtils.isBlank(fileFilterClassName) && !PrefixAdditionFilter.class.getName().equals(fileFilterClassName)) {
+	  if (!StringUtils.isBlank(fileFilterClassName) && 
+		  ! fileFilterClassName instanceof PrefixAdditionFilter.class.getName()) {
       try {
         pathFilter = (PathFilter) Class.forName(fileFilterClassName).newInstance();
       } catch (ClassNotFoundException | InstantiationException | IllegalAccessException e) {

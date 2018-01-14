@@ -161,14 +161,12 @@ public class WikipediaMapper extends Mapper<LongWritable, Text, Text, Text> {
     try {
       while ((categoryIndex = document.indexOf("[[Category:", startIndex)) != -1) {
         int endIndex = document.indexOf("]]", categoryIndex);
-        if (endIndex >= document.length() || endIndex < 0) {
+        if (endIndex >= document.length() || endIndex < 0 || !categoryIndex < document.length()) {
           break;
         }
         document = document.replace(document.substring(categoryIndex, endIndex + 2), "");
         if (categoryIndex < document.length()) {
           startIndex = categoryIndex;
-        } else {
-          break;
         }
       }
     } catch(StringIndexOutOfBoundsException e) {
